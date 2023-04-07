@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-white: #fff;
+    --clr-black: #000;
+    --clr-lightbg: #DCDCDC;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--clr-lightbg);
+}
+
+.btn {
+    background-color: var(--clr-white);
+    border: none;
+    padding: .4em .6em;
+    border-radius: .3em;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--clr-lightbg);
+}
+
+.header {
+    text-align: center;
+    margin: .7em 0;
+}
+
+/* Search Bar */
+
+.search-contact {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.search-text {
+    background-color:  var(--clr-white);
+    color: var(--clr-black);
+    font-size: 1rem;
+    padding: .9em;
+    outline: none;
+    border: none;
+    border-radius: .3em;
+    width: 100%;
+    padding-right: 3em;
+}
+
+.search-text::placeholder {
+    color: var(--clr-black);
+}
+
+.search-button {
+    position: absolute;
+    background: var(--clr-white);
+    border: none;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.search-icon {
+    font-size: 1.7rem;
+}
+
+
+/* contact */
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em 0;
+}
+
+
+.contact {
+    min-width: 90%;
+    max-width: 500px;
+    background: var(--clr-white);
+    padding: 1em;
+    border-radius: .3em;
+}
+
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-info {
+    display: flex;
+    gap: 1em;
+}
+
+.contact-icon {
+    width: 50px;
+}
+
+.contact-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: .1px;
+}
+
+.contact-details {
+    display: flex;
+    margin-top: 1.3em;
+    gap: 0 1em;
+}
+
+.contact-details .icon {
+    filter: invert(.3);
+}
+
+.contact-number {
+    font-weight: 500;
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    inset: 0 0 0 0;
+}
+
+.modal {
+    background-color: var(--clr-white);
+    padding: 1em 2em;
+    border-radius: .3em;
+    border: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+}
+
+
+/* Delete Modal */
+
+.confirm-box {
+    margin-top: 1em;
+}
+
+.delete-yes,
+.delete-no {
+    font-size: 1.1rem;
+}
+
+
+/* Edit Modal */
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.edit-input {
+    margin-bottom: 1em;
+    padding: .4em;
+}
+.edit-form label {
+    font-weight: bold;
+    margin-bottom: .1em;
+}
+
+.save-edit {
+	font-size: 1.1rem;
+}
