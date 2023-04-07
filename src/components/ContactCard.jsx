@@ -1,3 +1,8 @@
+import { IoMdContact } from 'react-icons/io'
+import { FaUserEdit } from 'react-icons/fa'
+import { MdDeleteForever } from 'react-icons/md'
+import { BsTelephone } from 'react-icons/bs'
+
 function ContactCard({ contactData: { name, phoneNumber, id }, setDeleteModal, setEditModal, setContactInfo }) {
   
   const setContactId = () => {
@@ -11,22 +16,18 @@ function ContactCard({ contactData: { name, phoneNumber, id }, setDeleteModal, s
     <div className="contact">
       <div className="contact-header">
         <div className="contact-info">
-          <img
-            src=""
-            alt=""
-            className="contact-icon"
-          />
+          <IoMdContact className="contact-icon" />
           <div>
             <p className="contact-name">{name}</p>
           </div>
         </div>
         <div className="contact-edit">
-          <IconButton icon="edit.png" onClick={() => {
+          <IconButton Icon={<FaUserEdit className="icon" />} onClick={() => {
             setEditModal(prev => !prev)
             setContactId()
           }} />
           <IconButton
-            icon="delete.png" 
+            Icon={<MdDeleteForever className="icon"/>}
             onClick={() => {
               setDeleteModal(prev => !prev)
               setContactId()
@@ -34,7 +35,7 @@ function ContactCard({ contactData: { name, phoneNumber, id }, setDeleteModal, s
         </div>
       </div>
       <div className="contact-details">
-        <img src="../img/icons/telephone.png" alt="phone" className="contact-icon" />
+        <BsTelephone style={{ fontSize: "1.3rem" }} />
         <p className="contact-number">(+91) {phoneNumber}</p>
       </div>
     </div>
@@ -43,11 +44,10 @@ function ContactCard({ contactData: { name, phoneNumber, id }, setDeleteModal, s
 }
 
 
-function IconButton({ icon, onClick }) {
+function IconButton({ Icon, onClick }) {
    return (
      <button className="btn" onClick={onClick}>
-       {icon}
-       <img src={"../img/icons/" + icon} alt="" className="icon" />
+      {Icon}
      </button>
    )
 }

@@ -12,12 +12,12 @@ function SearchBar({ searchTerm, setSearchTerm }) {
           id="searchInput"
           placeholder="Search by name or mobile number"
           value={searchTerm}
-          onChange={setSearchTerm} />
+          onChange={(e) => setSearchTerm(e.target.value)} />
         <button 
           className="search-button"
           type="button"
           id="searchBtn">
-            <AiOutlineSearch className="search-icon" />
+            <AiOutlineSearch className="icon" />
         </button>
       </div>
     )

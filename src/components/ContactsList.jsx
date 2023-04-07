@@ -1,7 +1,7 @@
 import ContactCard from './ContactCard'
 import { useState, } from 'react'
 import { contactsData } from './../data';
-import EditModal from './modals/EditModal'
+import EditModal from './modals/ContactModal'
 import DeleteModal from './modals/DeleteModal'
 
 function ContactsList({ contacts, dispatch }) {
@@ -21,7 +21,6 @@ function ContactsList({ contacts, dispatch }) {
       <ContactCard 
         contactData={contact}
         key={contact.id}
-        dispatch={dispatch}
         setDeleteModal={setDeleteModal}
         setEditModal={setEditModal}
         setContactInfo={setContactInfo} />
@@ -39,11 +38,15 @@ function ContactsList({ contacts, dispatch }) {
 
     {editModal && (
       <EditModal
+        contactId={contactInfo.contactId}
+        contactName={contactInfo.contactName}
+        contactNum={contactInfo.contactNum}
         contactInfo={contactInfo}
         closeModal={() => {
           setEditModal(false)
         }} 
-        dispatch={dispatch}  />
+        dispatch={dispatch}
+        type="editContact" />
     )}
     </>
   )

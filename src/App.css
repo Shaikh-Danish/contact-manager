@@ -5,14 +5,21 @@
 }
 
 :root {
-    --clr-white: #fff;
-    --clr-black: #000;
-    --clr-lightbg: #DCDCDC;
+    --clr-white: rgb(255, 255, 255);
+    --clr-black: rgb(0, 0, 0);
+    --clr-lightbg: rgb(220,220,220);
+    --clr-darkblue: rgb(25,55,109)
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--clr-lightbg);
+}
+
+.App {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
 }
 
 .btn {
@@ -68,7 +75,7 @@ body {
     cursor: pointer;
 }
 
-.search-icon {
+.icon {
     font-size: 1.7rem;
 }
 
@@ -81,7 +88,6 @@ body {
     justify-content: center;
     gap: 1em 0;
 }
-
 
 .contact {
     min-width: 90%;
@@ -98,17 +104,18 @@ body {
 
 .contact-info {
     display: flex;
-    gap: 1em;
+    gap: .5em;
 }
 
 .contact-icon {
-    width: 50px;
+    font-size: 3rem;
 }
 
 .contact-name {
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: .1px;
+    margin-top: .2em;
 }
 
 .contact-details {
@@ -159,21 +166,40 @@ body {
 
 /* Edit Modal */
 
-.edit-form {
+.form {
     display: flex;
     flex-direction: column;
     margin-top: 1em;
 }
 
-.edit-input {
+.contact-input {
     margin-bottom: 1em;
     padding: .4em;
 }
-.edit-form label {
-    font-weight: bold;
-    margin-bottom: .1em;
+.form label {
+    font-weight: 700;
+    margin-bottom: .15em;
 }
 
-.save-edit {
+.save {
 	font-size: 1.1rem;
+}
+
+
+/* Add Contact */
+
+.add-contact {
+    position: fixed;
+    right: 20px;
+    bottom: 15px;
+    background-color: var(--clr-darkblue);
+    padding: .8em;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.add-contact .icon {
+    font-size: 2rem;
+    filter: invert(1);
+
 }

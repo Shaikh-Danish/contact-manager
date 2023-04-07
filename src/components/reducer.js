@@ -15,17 +15,21 @@ export const reducer = (state, action) => {
             const updatedContacts = [...state.contacts].filter(contact => contact.id !== action.payload);
             return { ...state, contacts: updatedContacts };
         }
-        case "addContact":
-            return state;
+        case "addContact": {
+            const length = state.contacts.size;
+            const newId = Array.from(state.contacts)[length - 1].id + 1
 
-        case "filterContacts": {
-            // console.log(state.contacts)
-            const filteredContacts = [...state.contacts].filter(contact => {
-                console.log(contact.name.toLowerCase().includes(action.payload.toLowerCase()))
-                return contact.name.toLowerCase().includes(action.payload.toLowerCase()) || contact.phoneNumber.includes(action.payload)
-            })
-            console.log(filteredContacts)
-            return { ...state, contacts: filteredContacts }
+            const newContact = {
+              id: newId,
+              name: action.payload.contactName,
+              phoneNumber: action.payload.contactNum
+            };
+          
+            // Create a new Set with the existing contacts and the new contact
+            const newContacts = new Set([...state.contacts, newContact]);
+
+            return { ...state, contacts: newContacts };
+
         }
     } 
 }
